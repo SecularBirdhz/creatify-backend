@@ -1,10 +1,10 @@
+from django.contrib import admin
 from django.urls import path
-from .views import SignupView, SigninView, MeView
-
-app_name = 'users'  # 命名空间标识
+from accounts.views import SignUpView, SignInView, MeView
 
 urlpatterns = [
-    path('signup/', SignupView.as_view(), name='signup'),
-    path('signin/', SigninView.as_view(), name='signin'),
+    path('admin/', admin.site.urls),
+    path('signup/', SignUpView.as_view(), name='signup'),
+    path('signin/', SignInView.as_view(), name='signin'),
     path('me/', MeView.as_view(), name='me'),
 ]
